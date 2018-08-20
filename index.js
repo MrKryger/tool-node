@@ -18,9 +18,20 @@ let result = {
   ru,
 }
 
-app.post("/json", jsonParser, function (request, response) {
+app.post('/json', jsonParser, function (request, response) {
   if(!request.body) return response.sendStatus(400);
-  console.log(request.body);
+  
+  console.log(request.params)
+  console.log(request.body)
+  
+  response.set('Content-Type', 'application/json');
+  response.set("Access-Control-Allow-Origin", "*");
+  
+  // response.set({
+  //   'content-type': 'application/json',
+  //   'content-length': '100',
+  // });
+  
   response.json(result);
 });
 
