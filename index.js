@@ -7,10 +7,15 @@ var jsonParser = bodyParser.json();
 
 app.use(express.static(__dirname + "/public"));
 
-
+let en = {
+  ok: "Good"
+};
+let ru = {
+  ok: "Хорошо"
+};
 let result = {
-  en: "Good",
-  ru: "Хорошо",
+  en,
+  ru,
 }
 
 app.post("/json", jsonParser, function (request, response) {
