@@ -1,11 +1,24 @@
 var express = require("express");
+
 var bodyParser = require("body-parser");
 
 var app = express();
 // создаем парсер для данных в формате json
-var jsonParser = bodyParser.json();
+// var jsonParser = bodyParser.json();
+// app.use(require('connect').bodyParser.json());
 
-app.use(express.static(__dirname + "/public"));
+
+// app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({ extended: true }))
+// app.use(express.bodyParser.json());
+app.use(bodyParser.json())
+bodyParser.urlencoded({ extended: false });
+
+// var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
+// app.use(bodyParser.json({ type: 'application/*+json' }))
+
 
 let en = {
   ok: "Good"
@@ -17,14 +30,29 @@ let result = {
   en,
   ru,
 }
+app.all('/lang',  (req, res)  => {
+  if (!req.body) return res.sendStatus(400)
+  res.set('Content-Type', 'application/json');
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Headers", "*");
+  if (req.body.lang === 'ru') {
+    res.json(result);
+  
+  } else {
+  }
+  console.log(req.headers)
+  console.log(req.body)
+  
+})
 
-app.post('/json', jsonParser, function (request, response) {
+app.post('/json', function (request, response) {
   if(!request.body) return response.sendStatus(400);
   
   console.log(request.params)
   console.log(request.body)
   
   response.set('Content-Type', 'application/json');
+  // response.set('Content-Type', 'multipart/form-data');
   response.set("Access-Control-Allow-Origin", "*");
   
   // response.set({
@@ -39,4 +67,4 @@ app.get("/", function(request, response){
   response.send("<h1>Главная страница</h1>");
 });
 
-app.listen(3000);
+app.listen(3000, () => console.log('http://127.0.0.1:3000/'));
