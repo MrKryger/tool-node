@@ -3,15 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 var app = express();
-// создаем парсер для данных в формате json
-// var jsonParser = bodyParser.json();
-// app.use(require('connect').bodyParser.json());
 
-
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: true }))
-// app.use(express.bodyParser.json());
 app.use(bodyParser.json())
 bodyParser.urlencoded({ extended: false });
 
@@ -37,8 +29,9 @@ app.all('/lang',  (req, res)  => {
   res.set("Access-Control-Allow-Headers", "*");
   if (req.body.lang === 'ru') {
     res.json(result);
-  
   } else {
+    res.json(result);
+  
   }
   console.log(req.headers)
   console.log(req.body)
