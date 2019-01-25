@@ -1,0 +1,13 @@
+{
+  "nettype":"DHCP",
+  "netdevice":"eth0",
+  "macaddr":"00:A5:EE:B0:0C:0E",
+  "ipaddress":"192.168.64.7",
+  "netmask":"255.255.255.0",
+  "conf_nettype":"DHCP",
+  "conf_hostname":"",
+  "conf_ipaddress":"",
+  "conf_netmask":"",
+  "conf_gateway":"",
+  "conf_dnsservers":""
+}
