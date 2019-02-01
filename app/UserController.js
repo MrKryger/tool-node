@@ -7,14 +7,28 @@ class UserController {
   }
   
   index () {
-    let a = settings
-    // let a = {
-      //   login: 'Red',
-      //   email: 'email@mail.ru'
-      // }
-    return a
+    let data = settings
+    return {
+      data,
+      res: true,
+      error: ''
+    }
+  }
   
- 
+  profile () {
+    let data = {
+      calendar_view: "",
+      email: "red@mail.ru",
+      first_name: "Red",
+      last_name: "Reds",
+      phone: "7911",
+      start_page: "home",
+    }
+    return {
+      data,
+      res: true,
+      error: ''
+    }
   }
 }
 
