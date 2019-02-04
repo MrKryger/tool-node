@@ -6,14 +6,37 @@ class UserController {
     // this.result = {};
   }
   
-  index () {
-    let data = settings
-    return {
-      data,
-      res: true,
-      error: ''
+    index () {
+      let data = [
+        {
+          first_name: "Red",
+          last_name: "",
+          middle_name: "",
+          age: "",
+          birthday: "",
+          email: "",
+          phone: "",
+          rating: "",
+          notes: "",
+        },
+        {
+          first_name: "Black",
+          last_name: "",
+          middle_name: "",
+          age: "",
+          birthday: "",
+          email: "",
+          phone: "",
+          rating: "",
+          notes: "",
+        }
+      ]
+      return {
+        data,
+        res: true,
+        error: ''
+      }
     }
-  }
   
   profile () {
     let data = {
