@@ -6,7 +6,8 @@ let rer = true
 
 if (rer) {
   // connection = mysql.createConnection('mysql://root@localhost:3306/node?debug=true')
-  connection = mysql.createConnection({
+  connection = mysql.createPool({
+    connectionLimit : 3,
     host     : 'localhost',
     user     : 'node',
     password : 'password',
