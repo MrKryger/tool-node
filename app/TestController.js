@@ -1,6 +1,5 @@
 const settings = require('../json/settings')
 const db = require('../db')
-const hz = require('../hz')
 
 class UserController {
   constructor () {
@@ -26,14 +25,12 @@ class UserController {
     //   callback(null, results);
     //
     // })
-
-    hz.getData(function (result) {
-      return {
-        data: result,
-        res: true,
-        error: ''
-      }
-    })
+  
+    return {
+      data: result,
+      res: true,
+      error: ''
+    }
     // console.log('as')
     // console.log(data)
     // return {

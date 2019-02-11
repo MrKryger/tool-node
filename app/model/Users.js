@@ -25,51 +25,7 @@ function create (request,done) {
   )
 }
 
-function store (request,done) {
-  db.query('SELECT * FROM node.users',
-    function (err, result, fields) {
-      if (err) {
-        throw err
-      }
-      done(result)
-    }
-  )
-}
-// $id
-function show (id,done) {
-  db.query('SELECT * FROM node.users',
-    function (err, result, fields) {
-      if (err) {
-        throw err
-      }
-      done(result)
-    }
-  )
-}
-// $id
-function edit (request,id,done) {
-  db.query('SELECT * FROM node.users',
-    function (err, result, fields) {
-      if (err) {
-        throw err
-      }
-      done(result)
-    }
-  )
-}
-// request, $id
-function update (request,id,done) {
-  db.query('SELECT * FROM node.users',
-    function (err, result, fields) {
-      if (err) {
-        throw err
-      }
-      done(result)
-    }
-  )
-}
-// $id
-function destroy (id,done) {
+function read (request,done) {
   db.query('SELECT * FROM node.users',
     function (err, result, fields) {
       if (err) {
@@ -80,4 +36,34 @@ function destroy (id,done) {
   )
 }
 
-module.exports = {getData}
+function update (request,id,done) {
+  let query = `
+  UPDATE node.users
+  SET
+  users.last_name = ${request.last_name},
+  users.middle_name = ${request.middle_name}
+  WHERE users.id = ${request.id}
+  `
+  
+  db.query(query,function (err, result, fields) {
+      if (err) {
+        throw err
+      }
+      done(result)
+    }
+  )
+}
+
+function destroy (id,done) {
+  id = Number(id)
+  let query = `DELETE FROM node.users WHERE users.id = ${id}`
+  db.query(query,    function (err, result, fields) {
+      if (err) {
+        throw err
+      }
+      done(result)
+    }
+  )
+}
+
+module.exports = {index,create,read,update,destroy}

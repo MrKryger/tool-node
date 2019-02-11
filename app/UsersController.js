@@ -1,24 +1,22 @@
-const Users = require('./model/Users')
 const User = require('./model/User')
 
-class UserController {
+class UsersController {
   constructor () {
     // this.id = 'id_1';
     // this.result = {};
   }
   
   static index () {
-    Users.index(function (result) {
-      return {
-        data: result,
-        res: true,
-        error: '',
-      }
+    let query = `SELECT * FROM node.users`
+    User.getData(query,function (result) {
+      return result
     })
+  
+    // User.getData(query,(result) => result)
   }
   create (request) {
     let req = request
-    Users.create(req, function (result) {
+    User.create(req, function (result) {
       return {
         data: result,
         res: true,
@@ -28,7 +26,7 @@ class UserController {
   }
   store (request) {
     let req = request
-    Users.store(req,function (result) {
+    User.store(req,function (result) {
       return {
         data: result,
         res: true,
@@ -38,7 +36,7 @@ class UserController {
   }
   show (request) {
     let id = request
-    Users.show(id,function (result) {
+    User.show(id,function (result) {
       return {
         data: result,
         res: true,
@@ -49,7 +47,7 @@ class UserController {
   edit (request) {
     let id = request
     let req = request
-    Users.edit(req,id,function (result) {
+    User.edit(req,id,function (result) {
       return {
         data: result,
         res: true,
@@ -60,7 +58,7 @@ class UserController {
   update (request) {
     let id = request
     let req = request
-    Users.update(req,id,function (result) {
+    User.update(req,id,function (result) {
       return {
         data: result,
         res: true,
@@ -70,7 +68,7 @@ class UserController {
   }
   destroy (request) {
     let id = request
-    Users.destroy(id,function (result) {
+    User.destroy(id,function (result) {
       return {
         data: result,
         res: true,
@@ -81,4 +79,4 @@ class UserController {
   
 }
 
-module.exports = UserController
+module.exports = UsersController

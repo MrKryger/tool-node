@@ -10,7 +10,7 @@ router.all('/', function(req, res, next) {
   res.set("Access-Control-Allow-Headers", "content-type,token");
   res.set("Access-Control-Request-Method", "POST");
   
-  let items = User.prototype.index()
+  let items = UserController.index()
   res.json(items);
   // console.log(req.headers)
   // console.log(req.body)
