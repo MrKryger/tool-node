@@ -5,13 +5,13 @@ class UsersController {
     // this.id = 'id_1';
     // this.result = {};
   }
-  
-  static index () {
+
+  index () {
     let query = `SELECT * FROM node.users`
     User.getData(query,function (result) {
       return result
     })
-  
+
     // User.getData(query,(result) => result)
   }
   create (request) {
@@ -76,7 +76,7 @@ class UsersController {
       }
     })
   }
-  
+
 }
 
 module.exports = UsersController

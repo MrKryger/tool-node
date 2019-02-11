@@ -6,7 +6,14 @@ function index (done) {
       if (err) {
         throw err
       }
-      done(result)
+      let data = {
+        id: result[0].id,
+        name: result[0].name,
+        email: result[0].email,
+      }
+
+
+      done(data)
     }
   )
 }
@@ -44,7 +51,7 @@ function update (request,id,done) {
   users.middle_name = ${request.middle_name}
   WHERE users.id = ${request.id}
   `
-  
+
   db.query(query,function (err, result, fields) {
       if (err) {
         throw err

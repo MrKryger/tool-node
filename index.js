@@ -23,10 +23,10 @@ app.use('/api/test', testRouter);
 app.use('/api/users', usersRouter);
 
 // miner
-let statusRouter = require('./routes/miner/status');
-let allRouter = require('./routes/miner/all');
-app.use('/cgi-bin/get_miner_status.cgi', statusRouter);
-app.use('/cgi-bin/all', allRouter);
+// let statusRouter = require('./routes/miner/status');
+// let allRouter = require('./routes/miner/all');
+// app.use('/cgi-bin/get_miner_status.cgi', statusRouter);
+// app.use('/cgi-bin/all', allRouter);
 
 
 

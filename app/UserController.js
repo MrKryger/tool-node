@@ -5,17 +5,23 @@ class UserController {
   constructor () {
     // this.id = 'id_1';
     // this.result = {};
+
   }
-  
-  static index () {
-    Users.index(function (result) {
+
+   index () {
+   let e =  Users.index(function (result) {
+      console.log(result)
+     this.roza = result
       return {
         data: result,
         res: true,
         error: '',
       }
     })
+     console.log(`ee ${this.roza}`)
+
   }
+
   create (request) {
     let req = request
     Users.create(req, function (result) {
@@ -78,7 +84,7 @@ class UserController {
       }
     })
   }
-  
+
 }
 
 module.exports = UserController
