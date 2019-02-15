@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let User = require('../app/UserController')
+let UserController = require('../app/UserController')
 
 /* GET users listing. */
 router.all('/', function(req, res, next) {
@@ -10,7 +10,7 @@ router.all('/', function(req, res, next) {
   res.set("Access-Control-Allow-Headers", "content-type,token");
   res.set("Access-Control-Request-Method", "POST");
   
-  let items = UserController.index()
+  let items = UserController.prototype.index()
   res.json(items);
   // console.log(req.headers)
   // console.log(req.body)

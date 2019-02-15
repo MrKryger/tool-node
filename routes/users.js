@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
   res.set(...header[1]);
   res.set(...header[2]);
   res.set(...header[3]);
-
-  Users.index((result)=>{res.json(result)})
+  
+  UserController.index((result)=>{res.json(result)})
 
 });
 
