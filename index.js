@@ -10,6 +10,7 @@ let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
 let profileRouter = require('./routes/profile');
 let clientsRouter = require('./routes/clients');
+let servicesRouter = require('./routes/services');
 let reservationsRouter = require('./routes/reservations');
 let testRouter = require('./routes/test');
 
@@ -17,6 +18,7 @@ app.use('/api/login', authorRouter);
 app.use('/api/', indexRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/clients', clientsRouter);
+app.use('/api/services', servicesRouter);
 app.use('/api/reservations', reservationsRouter);
 app.use('/api/test', testRouter);
 
