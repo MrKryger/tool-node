@@ -10,34 +10,14 @@ class UserController {
   index (callback) {
     let data = {}
 
-    // db.connect()
-    // db.query('SELECT * FROM node.users', function (err, results, fields) {
-    //   // if (err) {
-    //   //   console.log(err);
-    //   // } else {
-    //     console.log(results);
-    //       // var user = results[0];
-    //       // return{
-    //       //   name: user.name,
-    //       //   email: user.name,
-    //       // };
-    //   // }
-    //   callback(null, results);
-    //
-    // })
+
   
     return {
       data: result,
       res: true,
       error: ''
     }
-    // console.log('as')
-    // console.log(data)
-    // return {
-    //   data,
-    //   res: true,
-    //   error: ''
-    // }
+
   }
 
 
