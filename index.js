@@ -23,8 +23,12 @@ let Socket = require('./app/SocketController')
 
 const wss = new WebSocket.Server({ port: 3003 })
 wss.on('connection', function connection (ws) {
+  ws.on('message', function incoming(message) {
+    Socket.prototype.created(message)
+  });
+
   setInterval(function timeout () {
-    const json = JSON.stringify(Socket.prototype.created())
+    const json = JSON.stringify(Socket.prototype.index())
     ws.send(json)
   }, 5000)
 })
