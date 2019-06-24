@@ -9,12 +9,12 @@ router.all('/', function(req, res, next) {
   res.set(...header[1]);
   res.set(...header[2]);
   res.set(...header[3]);
-  
+
   // let items = Index.prototype.success()
   // let items = Index.prototype.error()
-  
+
   // let items = true ? Index.prototype.success(): Index.prototype.error()
-  let items = ['1']
+  let items = ['Hello front']
   res.json(items);
   // console.log(req.headers)
   // console.log(req.body)

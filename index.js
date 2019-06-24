@@ -17,22 +17,52 @@ app.use('/api/all', allRouter)
 app.use('/api/pool/', poolRouter)
 app.use('/api/dataset/', dataRouter)
 
-
-
-let Socket = require('./app/SocketController')
+// controller websocket
+const Socket = require('./app/SocketController')
+// webSocket
 
 const wss = new WebSocket.Server({ port: 3003 })
+
 wss.on('connection', function connection (ws) {
-  ws.on('message', function incoming(message) {
-    Socket.prototype.created(message)
-  });
+  ws.on('message', function incoming (message) {
+    // Socket.prototype.created(message)
 
-  setInterval(function timeout () {
-    const json = JSON.stringify(Socket.prototype.index())
-    ws.send(json)
-  }, 5000)
+    setInterval(()=>sendMessage(ws,message), 1000)
+  })
+
+
+
+  function sendMessage(ws,msg){
+    waitForSocketConnection(ws, function(){
+      console.log("message sent!!!");
+      const json = JSON.stringify(Socket.prototype.show(msg))
+      ws.send(json)
+    });
+  }
+
+// Make the function wait until the connection is made...
+  function waitForSocketConnection(socket, callback){
+    setTimeout(
+      function () {
+        if (socket.readyState === 1) {
+          console.log("Connection is made")
+          if (callback != null){
+            callback();
+          }
+        } else {
+          console.log("wait for connection...")
+          waitForSocketConnection(socket, callback);
+        }
+
+      }, 50); // wait 5 milisecond for the connection...
+  }
+
+  // setInterval(function timeout () {
+  //   const json = JSON.stringify(Socket.prototype.index())
+  //   ws.send(json)
+  // }, 5000)
 })
-
+// webSocket - end
 
 // let url = '127.0.0.1'
 let url = 'localhost'
