@@ -1,43 +1,40 @@
-// const json = require('../json/all');
-
 class AllController {
-    constructor () {
-        // this.id = 'id_1';
-        // this.result = {};
-    }
-    index () {
-        let  json = require('../json/all');
-        return json
-    }
+  constructor (data) {
+    // this.id = 'id_1';
+    // this.result = {};
+  }
 
-    statusmap () {
-        let  json = require('../json/statusmap');
-       return json
+  index (data) {
+    console.log(data)
+    switch (data.method) {
+      case 'info':
+        return this.info()
+      case 'item':
+        return this.item(data.params)
+      default:
+        return this.default()
     }
+  }
 
+  info () {
+    let json = require('../json/settings')
+    return json
+  }
 
-    filesystems () {
-        let  json = require('../json/filesystems-get');
-        return json
-    }
-    exp () {
-        let  json = require('../json/exp');
-        return json
-    }
+  item (data) {
+    return data
+  }
 
-    list (id) {
-        let json = require('../json/filesystems-list');
-        return json
+  default () {
+    let json = {
+      'id': '100500',
+      'jsonrpc': '2.0',
+      'result': {
+        method: 'default'
       }
-
-    pools (id) {
-      let json = require('../json/pools-list');
-      return json[id]
     }
-
-
+    return json
+  }
 }
-
-
 
 module.exports = AllController

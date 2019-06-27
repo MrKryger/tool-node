@@ -5,6 +5,4 @@ let header = [
   ['Access-Control-Request-Method', 'POST']
 ]
 
-
-
 module.exports = header

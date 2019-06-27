@@ -14,7 +14,10 @@ router.all('/', function(req, res, next) {
   // let items = Index.prototype.error()
 
   // let items = true ? Index.prototype.success(): Index.prototype.error()
-  let items = ['Hello front']
+  let items = {
+    method: '/',
+    message: 'Hello front'
+  }
   res.json(items);
   // console.log(req.headers)
   // console.log(req.body)
