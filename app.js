@@ -1,2 +1,3 @@
-require('/home/a0142522/domains/a0142522.xsph.ru/public_html/index.js');
-process.chdir('/home/a0142522/domains/a0142522.xsph.ru/public_html');
+//настройка для хостинга
+// require('/home/a..../domains/public_html/index.js');
+// process.chdir('/home/a..../domains/public_html');
