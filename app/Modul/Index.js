@@ -8,16 +8,25 @@ module.exports.All = function(req, res) {
 module.exports.Load = function(req, res) {
   // console.log(req.body, 'Body');
   console.log(req.files, 'files');
+  let a = req.files[0].originalname
+  let filename = req.files[0].filename
+  let type = a.split('.')[1]
+
   console.log('Load')
-  console.log(req.body)
+  // console.log(req.body)
   let items = {
-    message: 'load'
+    filename: filename,
+    type: type,
+    name: `${filename}.${type}`,
+    url: `http://localhost:3000/uploads/${filename}`,
   }
   res.json(items);
 }
 
 module.exports.Uploads = function(req, res) {
-  let notes = '../../uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg'
+  console.log(req.params.id)
+
+  let notes = `../../uploads/${req.params.id}`
   const fileName = path.resolve(__dirname, notes);
   const readStream = fs.createReadStream(fileName);
   readStream.pipe(res);

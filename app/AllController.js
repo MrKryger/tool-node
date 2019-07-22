@@ -36,8 +36,7 @@ class AllController {
 
   image () {
     console.log('image')
-    // let a = require('../uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg')
-    let a = {url: 'http://localhost:3000/uploads/1'}
+    let a = {url: 'http://localhost:3000/uploads/3785b7636cb8001fa1f4b86933a26686'}
     return a
   }
 
