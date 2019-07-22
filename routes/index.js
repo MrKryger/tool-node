@@ -1,26 +1,16 @@
 let express = require('express');
-let router = express.Router();
-let header = require('../config/header')
+let router  = express.Router();
+let multer  = require('multer')
+let upload  = multer({
+  dest: './uploads/',
+  limits: { fieldSize: 200000000, files: 1 }})
 
-/* GET users listing. */
-router.all('/', function(req, res, next) {
-  if (!req.body) return res.sendStatus(400)
-  res.set(...header[0])
-  res.set(...header[1]);
-  res.set(...header[2]);
-  res.set(...header[3]);
+let middleware = require('../app/Controller/HeaderController')
+let Index = require('../app/Modul/Index')
 
-  // let items = Index.prototype.success()
-  // let items = Index.prototype.error()
-
-  // let items = true ? Index.prototype.success(): Index.prototype.error()
-  let items = {
-    method: '/',
-    message: 'Hello front'
-  }
-  res.json(items);
-  // console.log(req.headers)
-  // console.log(req.body)
-});
+console.log('indexRouter')
+router.all('/', middleware, Index.All)
+router.all('/load', middleware, upload.any(), Index.Load)
+router.get('/uploads/:id', middleware, Index.Uploads)
 
 module.exports = router;

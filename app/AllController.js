@@ -11,6 +11,10 @@ class AllController {
         return this.info()
       case 'item':
         return this.item(data.params)
+      case 'upload':
+        return this.upload(data.params)
+      case 'image':
+        return this.image()
       default:
         return this.default()
     }
@@ -23,6 +27,18 @@ class AllController {
 
   item (data) {
     return data
+  }
+  upload (data) {
+    console.log(data.params, 'upload')
+
+    return data
+  }
+
+  image () {
+    console.log('image')
+    // let a = require('../uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg')
+    let a = {url: 'http://localhost:3000/uploads/1'}
+    return a
   }
 
   default () {

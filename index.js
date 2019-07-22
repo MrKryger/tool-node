@@ -1,26 +1,22 @@
 let express = require('express')
-const WebSocket = require('ws')
-
-let app = express()
-
 let bodyParser = require('body-parser')
+let app = express()
 app.use(bodyParser.json())
 bodyParser.urlencoded({ extended: false })
 
-let allRouter = require('./routes/all')
+const WebSocket = require('ws')
+
 let indexRouter = require('./routes/index')
-let restRouter = require('./routes/rest')
+let allRouter   = require('./routes/all')
+let restRouter  = require('./routes/rest')
 
 app.use('/', indexRouter)
 app.use('/api/rpc', allRouter)
 app.use('/api/rest', restRouter)
 
-// controller websocket
-const Socket = require('./app/SocketController')
-// webSocket
-
-
-
+  // controller websocket
+  const Socket = require('./app/SocketController')
+  // webSocket
   const wss = new WebSocket.Server({ port: 3003 })
   wss.on('connection', function connection (ws) {
     ws.on('message', function incoming (message) {

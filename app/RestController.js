@@ -3,8 +3,10 @@ class RestController {
     // this.id = 'id_1';
   }
 
-  index () {
+  index (data) {
     // let json = require('../json/settings')
+    console.log(data)
+
     let json = {
       'id': '1',
       'rest': '1.0',
@@ -27,6 +29,7 @@ class RestController {
   }
 
   show (id) {
+    console.log(id)
     let json = {
       'id': '1',
       'rest': '1.0',
