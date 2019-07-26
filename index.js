@@ -6,13 +6,9 @@ bodyParser.urlencoded({ extended: false })
 
 const WebSocket = require('ws')
 
-let indexRouter = require('./routes/index')
-let allRouter   = require('./routes/all')
-let restRouter  = require('./routes/rest')
-
-app.use('/', indexRouter)
-app.use('/api/rpc', allRouter)
-app.use('/api/rest', restRouter)
+app.use('/', require('./routes/index'))
+app.use('/api/rpc', require('./routes/all'))
+app.use('/api/rest', require('./routes/rest'))
 
   // controller websocket
   const Socket = require('./app/SocketController')
