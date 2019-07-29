@@ -13,6 +13,8 @@ class AllController {
         return this.item(data.params)
       case 'upload':
         return this.upload(data.params)
+      case 'rooms-list':
+        return this.rooms()
       case 'image':
         return this.image()
       default:
@@ -38,6 +40,28 @@ class AllController {
     console.log('image')
     let a = {url: 'http://localhost:3000/uploads/3785b7636cb8001fa1f4b86933a26686'}
     return a
+  }
+  rooms () {
+    let lists = ['Yellow','Green','Blue','Brown','White','Red','Orange','Pink']
+    let obj = {}
+    for(let list in lists) {
+      obj[list] = {
+        id: list,
+        name : `${lists[list]} Rooms`,
+        address: `${lists[list]} Street`,
+        description: '',
+        img: '',
+        id_map: ''
+      }
+    }
+
+    let result = {
+      data:obj,
+      code: 1,
+      mess: ''
+    }
+
+    return result
   }
 
   default () {
