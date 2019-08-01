@@ -20,7 +20,13 @@ module.exports.Load = function(req, res) {
     name: `${filename}.${type}`,
     url: `http://localhost:3000/uploads/${filename}`,
   }
-  res.json(items);
+  let result = {
+    data:items,
+    code: 1,
+    mess: ''
+  }
+  // return result
+  res.json(result);
 }
 
 module.exports.Uploads = function(req, res) {

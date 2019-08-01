@@ -1,3 +1,7 @@
+let ManagerController = require('../app/ManagerController')
+let RoomController = require('../app/RoomController')
+
+
 class AllController {
   constructor (data) {
     // this.id = 'id_1';
@@ -5,7 +9,7 @@ class AllController {
   }
 
   index (data) {
-    console.log(data)
+    console.log(data,'index')
     switch (data.method) {
       case 'info':
         return this.info()
@@ -15,6 +19,20 @@ class AllController {
         return this.upload(data.params)
       case 'rooms-list':
         return this.rooms()
+      case 'managers-list':
+        return ManagerController.prototype.index()
+      case 'manager':
+        return ManagerController.prototype.item(data.params)
+      case 'managers-access':
+        return ManagerController.prototype.itemAccess(data.params)
+      case 'managers-add':
+        return ManagerController.prototype.itemAccessAdd(data.params)
+      case 'manager-create':
+        return ManagerController.prototype.create(data.params)
+      case 'manager-update':
+        return ManagerController.prototype.update(data.params)
+      case 'manager-remove':
+        return ManagerController.prototype.remove(data.params)
       case 'image':
         return this.image()
       default:
@@ -32,13 +50,12 @@ class AllController {
   }
   upload (data) {
     console.log(data.params, 'upload')
-
     return data
   }
 
   image () {
     console.log('image')
-    let a = {url: 'http://localhost:3000/uploads/3785b7636cb8001fa1f4b86933a26686'}
+    let a = {url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg'}
     return a
   }
   rooms () {
@@ -55,24 +72,13 @@ class AllController {
       }
     }
 
-    let result = {
-      data:obj,
-      code: 1,
-      mess: ''
-    }
-
-    return result
+    return obj
   }
 
+
   default () {
-    let json = {
-      'id': '100500',
-      'jsonrpc': '2.0',
-      'result': {
-        method: 'default'
-      }
-    }
-    return json
+
+    return 'default'
   }
 }
 
