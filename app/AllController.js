@@ -11,14 +11,18 @@ class AllController {
   index (data) {
     console.log(data,'index')
     switch (data.method) {
-      case 'info':
-        return this.info()
-      case 'item':
-        return this.item(data.params)
-      case 'upload':
-        return this.upload(data.params)
+
       case 'rooms-list':
-        return this.rooms()
+        return RoomController.prototype.index()
+      case 'room':
+        return RoomController.prototype.item(data.params)
+      case 'room-create':
+        return RoomController.prototype.create(data.params)
+      case 'room-update':
+        return RoomController.prototype.update(data.params)
+      case 'room-remove':
+        return RoomController.prototype.remove(data.params)
+
       case 'managers-list':
         return ManagerController.prototype.index()
       case 'manager':
@@ -33,6 +37,7 @@ class AllController {
         return ManagerController.prototype.update(data.params)
       case 'manager-remove':
         return ManagerController.prototype.remove(data.params)
+
       case 'image':
         return this.image()
       default:
@@ -40,39 +45,12 @@ class AllController {
     }
   }
 
-  info () {
-    let json = require('../json/settings')
-    return json
-  }
 
-  item (data) {
-    return data
-  }
-  upload (data) {
-    console.log(data.params, 'upload')
-    return data
-  }
 
   image () {
     console.log('image')
     let a = {url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg'}
     return a
-  }
-  rooms () {
-    let lists = ['Yellow','Green','Blue','Brown','White','Red','Orange','Pink']
-    let obj = {}
-    for(let list in lists) {
-      obj[list] = {
-        id: list,
-        name : `${lists[list]} Rooms`,
-        address: `${lists[list]} Street`,
-        description: '',
-        img: '',
-        id_map: ''
-      }
-    }
-
-    return obj
   }
 
 
