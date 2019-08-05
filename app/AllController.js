@@ -1,5 +1,6 @@
 let ManagerController = require('../app/ManagerController')
 let RoomController = require('../app/RoomController')
+let HallController = require('../app/HallController')
 
 
 class AllController {
@@ -11,6 +12,9 @@ class AllController {
   index (data) {
     console.log(data,'index')
     switch (data.method) {
+
+      case 'nav-list':
+        return RoomController.prototype.nav()
 
       case 'rooms-list':
         return RoomController.prototype.index()
@@ -38,6 +42,20 @@ class AllController {
       case 'manager-remove':
         return ManagerController.prototype.remove(data.params)
 
+      case 'hall-list':
+        return HallController.prototype.index()
+      case 'hall':
+        return HallController.prototype.item(data.params)
+      case 'hall-access':
+        return HallController.prototype.itemAccess(data.params)
+      case 'hall-add':
+        return HallController.prototype.itemAccessAdd(data.params)
+      case 'hall-create':
+        return HallController.prototype.create(data.params)
+      case 'hall-update':
+        return HallController.prototype.update(data.params)
+      case 'hall-remove':
+        return HallController.prototype.remove(data.params)
       case 'image':
         return this.image()
       default:

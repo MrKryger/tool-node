@@ -1,4 +1,5 @@
 let lists = ['Yellow','Green','Blue','Brown','White','Red','Orange','Pink']
+let HallController = require('../app/HallController')
 
 class RoomController {
   // список всех заведений
@@ -67,6 +68,16 @@ class RoomController {
     // console.log(data)
     let id = data.id
     return this.index()
+  }
+
+  nav () {
+    // console.log(data)
+    let obj = {
+      "rooms-list": this.index(),
+      "hall-list": HallController.prototype.indexParentId()
+    }
+
+    return obj
   }
 }
 
