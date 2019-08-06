@@ -11,8 +11,6 @@ class HallController {
         description: '',
         spot: 100,
         url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
-        line: 30,
-        column: 30,
       }
     }
     return obj
@@ -26,8 +24,6 @@ class HallController {
         description: '',
         spot: 100,
         url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
-        line: 30,
-        column: 30,
       }]
 
     }
@@ -37,16 +33,12 @@ class HallController {
       description: '',
       spot: 100,
       url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
-      line: 30,
-      column: 30,
     },{
       id: 20,
       name : `Twenty one Hall`,
       description: '',
       spot: 100,
       url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
-      line: 30,
-      column: 30,
     },
       {
         id: 21,
@@ -54,8 +46,6 @@ class HallController {
         description: '',
         spot: 100,
         url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
-        line: 30,
-        column: 30,
       }]
     obj[1] = arr
     return obj
@@ -97,9 +87,20 @@ class HallController {
       url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
       line: 30,
       column: 30,
+      map_id: 1
       // history: [{time:'12-07-2019', text:'Зарегестрирован столик №1'},
       //   {time:'13-07-2019', text:'Зарегестрирован столик №2'}
       // ],
+    }
+
+    return obj
+  }
+
+
+  maps (id) {
+    let obj = {
+      id: 1,
+
     }
 
     return obj

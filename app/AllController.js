@@ -1,6 +1,8 @@
 let ManagerController = require('../app/ManagerController')
 let RoomController = require('../app/RoomController')
 let HallController = require('../app/HallController')
+let SpotController = require('../app/SpotController')
+let OrderController = require('../app/OrderController')
 
 
 class AllController {
@@ -26,6 +28,29 @@ class AllController {
         return RoomController.prototype.update(data.params)
       case 'room-remove':
         return RoomController.prototype.remove(data.params)
+
+
+      case 'spots-list':
+        return SpotController.prototype.index()
+      case 'spot':
+        return SpotController.prototype.item(data.params)
+      case 'spot-create':
+        return SpotController.prototype.create(data.params)
+      case 'spot-update':
+        return SpotController.prototype.update(data.params)
+      case 'spot-remove':
+        return SpotController.prototype.remove(data.params)
+
+      case 'orders-list':
+        return OrderController.prototype.index()
+      case 'order':
+        return OrderController.prototype.item(data.params)
+      case 'order-create':
+        return OrderController.prototype.create(data.params)
+      case 'order-update':
+        return OrderController.prototype.update(data.params)
+      case 'order-remove':
+        return OrderController.prototype.remove(data.params)
 
       case 'managers-list':
         return ManagerController.prototype.index()
