@@ -1,4 +1,6 @@
 let lists = ['Yellow','Green','Blue','Brown','White','Red','Orange','Pink']
+var fs = require('fs');
+
 
 class HallController {
   // список всех заведений
@@ -87,7 +89,8 @@ class HallController {
       url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
       line: 30,
       column: 30,
-      map_id: 1
+      map_id: 1,
+      maps: this.mapGet(),
       // history: [{time:'12-07-2019', text:'Зарегестрирован столик №1'},
       //   {time:'13-07-2019', text:'Зарегестрирован столик №2'}
       // ],
@@ -97,13 +100,16 @@ class HallController {
   }
 
 
-  maps (id) {
-    let obj = {
-      id: 1,
+  mapSet (val) {
+    console.log('maps')
+    let data = JSON.stringify(val);
+    fs.writeFileSync('maps.json', data);
 
-    }
-
-    return obj
+    return {result: true}
+  }
+  mapGet (val) {
+    let a = require('../maps')
+    return a
   }
   // изменение данных
   update (data) {

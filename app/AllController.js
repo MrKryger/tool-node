@@ -81,6 +81,10 @@ class AllController {
         return HallController.prototype.update(data.params)
       case 'hall-remove':
         return HallController.prototype.remove(data.params)
+      case 'hall-map-set':
+        return HallController.prototype.mapSet(data.params)
+      case 'hall-map-get':
+        return HallController.prototype.mapGet(data.params)
       case 'image':
         return this.image()
       default:
