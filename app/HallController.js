@@ -1,5 +1,6 @@
 let lists = ['Yellow','Green','Blue','Brown','White','Red','Orange','Pink']
 var fs = require('fs');
+let OrderController = require('../app/OrderController')
 
 
 class HallController {
@@ -17,7 +18,8 @@ class HallController {
     }
     return obj
   }
-  indexParentId () {
+
+   indexParentId () {
     let obj = {}
     for(let list in lists) {
       obj[list] = [{
@@ -90,6 +92,7 @@ class HallController {
       line: 30,
       column: 30,
       map_id: 1,
+      orders: OrderController.prototype.indexParentId(),
       maps: this.mapGet(),
       // history: [{time:'12-07-2019', text:'Зарегестрирован столик №1'},
       //   {time:'13-07-2019', text:'Зарегестрирован столик №2'}

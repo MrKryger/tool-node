@@ -23,6 +23,36 @@ class OrderController {
     return obj
   }
 
+  indexParentId () {
+    let arr = []
+    for (let r=0; r < 3; r++) {
+      let ob = {
+        id: r,
+        name : `Reee A.B.`,
+        description: 'TableTableTable',
+        phone: '79006551122',
+        price:5000,
+        type_pay:0,
+        spot_min: 4,
+        spot_max: 8,
+        status: 0,
+        room_id: 7,
+        coord_id: 1,
+      }
+      arr.push(ob)
+    }
+
+
+    let obj = {}
+    for(let list=0; list < 3; list++) {
+      obj[list] = arr
+
+    }
+
+    return obj
+  }
+
+
 // создание менеджера
   create (data) {
     let datas = {
