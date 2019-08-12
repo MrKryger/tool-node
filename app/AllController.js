@@ -96,7 +96,8 @@ class AllController {
 
   image () {
     console.log('image')
-    let a = {url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg'}
+    let a = {url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c'}
+
     return a
   }
 

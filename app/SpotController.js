@@ -5,10 +5,10 @@ class SpotController {
   index (data) {
     // let id = data.id
     let obj = {}
-    for(let list in lists) {
+    for(let list = 0; list < 50; list++) {
       obj[list] = {
         id: list,
-        name : 10 + list,
+        name : 100 + list,
         description: 'TableTableTable',
         spot_min: 4,
         spot_max: 8,

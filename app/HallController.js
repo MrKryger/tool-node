@@ -13,7 +13,9 @@ class HallController {
         name : `${lists[list]} Halls`,
         description: '',
         spot: 100,
-        url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+        // url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+        url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
+
       }
     }
     return obj
@@ -27,7 +29,9 @@ class HallController {
         name : `${lists[list]} Halls`,
         description: '',
         spot: 100,
-        url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+        // url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+        url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
+
       }]
 
     }
@@ -36,20 +40,21 @@ class HallController {
       name : `Twoo Hall`,
       description: '',
       spot: 100,
-      url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+      url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
+
     },{
       id: 20,
       name : `Twenty one Hall`,
       description: '',
       spot: 100,
-      url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+      url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
     },
       {
         id: 21,
         name : `Twenty Hall`,
         description: '',
         spot: 100,
-        url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+        url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
       }]
     obj[1] = arr
     return obj
@@ -73,7 +78,7 @@ class HallController {
       name : data.name,
       description: data.description,
       spot: data.spot,
-      url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+      url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
       line: data.line,
       column: data.column,
 
@@ -88,7 +93,8 @@ class HallController {
       name : `${name} Hall`,
       description: 'HallHallHallHall',
       spot: 100,
-      url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+      // url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
+      url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
       line: 30,
       column: 30,
       map_id: 1,
