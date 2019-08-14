@@ -32,6 +32,10 @@ class AllController {
 
       case 'spots-list':
         return SpotController.prototype.index()
+      case 'spots-list-room':
+        return SpotController.prototype.indexParentRoom(data.params)
+      case 'spots-list-id':
+        return SpotController.prototype.indexParentId()
       case 'spot':
         return SpotController.prototype.item(data.params)
       case 'spot-create':

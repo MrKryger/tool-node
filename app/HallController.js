@@ -13,6 +13,7 @@ class HallController {
         name : `${lists[list]} Halls`,
         description: '',
         spot: 100,
+        room_id: list,
         // url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
         url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
 
@@ -29,6 +30,7 @@ class HallController {
         name : `${lists[list]} Halls`,
         description: '',
         spot: 100,
+        room_id: list,
         // url: 'http://localhost:3000/uploads/fa271655b8c8e1b2142c8307aa84cadf.jpg',
         url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
 
@@ -40,6 +42,7 @@ class HallController {
       name : `Twoo Hall`,
       description: '',
       spot: 100,
+      room_id: 1,
       url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
 
     },{
@@ -47,6 +50,7 @@ class HallController {
       name : `Twenty one Hall`,
       description: '',
       spot: 100,
+      room_id: 1,
       url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
     },
       {
@@ -54,6 +58,7 @@ class HallController {
         name : `Twenty Hall`,
         description: '',
         spot: 100,
+        room_id: 1,
         url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
       }]
     obj[1] = arr
@@ -79,6 +84,7 @@ class HallController {
       description: data.description,
       spot: data.spot,
       url: 'http://localhost:3000/uploads/46b31fc0b515c7891c6fab3e6de9d78c',
+      room_id: data.room_id,
       line: data.line,
       column: data.column,
 
@@ -98,6 +104,7 @@ class HallController {
       line: 30,
       column: 30,
       map_id: 1,
+      room_id: 1,
       orders: OrderController.prototype.indexParentId(),
       maps: this.mapGet(),
       // history: [{time:'12-07-2019', text:'Зарегестрирован столик №1'},

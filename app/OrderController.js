@@ -16,7 +16,8 @@ class OrderController {
         spot_min: 4,
         spot_max: 8,
         status: 0,
-        room_id: 1,
+        room_id: 0,
+        spot_id: 1,
         coord_id: 1,
       }
     }
@@ -36,7 +37,8 @@ class OrderController {
         spot_min: 4,
         spot_max: 8,
         status: 0,
-        room_id: 7,
+        room_id: 0,
+        spot_id: 1,
         coord_id: 1,
       }
       arr.push(ob)
@@ -66,6 +68,7 @@ class OrderController {
       type_pay: data.type_pay,
       status: data.status,
       room_id: data.room_id,
+      spot_id: data.spot_id,
       coord_id: data.coord_id,
     }
     return this.index()
@@ -84,6 +87,7 @@ class OrderController {
       spot_max: 8,
       status: 0,
       room_id: 1,
+      spot_id: 1,
       coord_id: 1,
     }
 
