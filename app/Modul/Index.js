@@ -1,13 +1,15 @@
-let fs      = require('fs');
-let path    = require('path')
+let fs = require('fs')
+let path = require('path')
 
-module.exports.All = function(req, res) {
-    res.json({message:'Home page '})
+module.exports.All = function (req, res) {
+  console.log('All')
+
+  res.json({ message: 'Home page ' })
 }
 
-module.exports.Load = function(req, res) {
+module.exports.Load = function (req, res) {
   // console.log(req.body, 'Body');
-  console.log(req.files, 'files');
+  console.log(req.files, 'files')
   let a = req.files[0].originalname
   let filename = req.files[0].filename
   let type = a.split('.')[1]
@@ -20,21 +22,17 @@ module.exports.Load = function(req, res) {
     name: `${filename}.${type}`,
     url: `http://localhost:3000/uploads/${filename}`,
   }
-  res.json(items);
+  res.json(items)
 }
 
-module.exports.Uploads = function(req, res) {
+module.exports.Uploads = function (req, res) {
   console.log(req.params.id)
 
   let notes = `../../uploads/${req.params.id}`
-  const fileName = path.resolve(__dirname, notes);
-  const readStream = fs.createReadStream(fileName);
-  readStream.pipe(res);
+  const fileName = path.resolve(__dirname, notes)
+  const readStream = fs.createReadStream(fileName)
+  readStream.pipe(res)
 }
-
-
-
-
 
 // module.exports.uploadAvatar = function(req, res) {
 //   var filePath = req.files[0].path

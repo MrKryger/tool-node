@@ -15,5 +15,9 @@ let headerResource = function(req, res, next) {
 }
 
 module.exports = function(req, res, next) {
+  console.log('headerResource')
+
   headerResource(req, res, next)
+  console.log('headerResource 1')
+
 }

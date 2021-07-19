@@ -5,7 +5,7 @@ class AllController {
   }
 
   index (data) {
-    console.log(data)
+    console.log('*',data)
     switch (data.method) {
       case 'info':
         return this.info()
